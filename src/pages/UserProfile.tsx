@@ -192,7 +192,8 @@ const UserProfile = () => {
         <div className="flex justify-center items-center w-full pb-2 px-2 border-b-2 border-[#008080] text-[#008080]">
           <p className="w-full text-xl font-semibold leading-6 tracking-wide">
             {' '}
-            Edit Admin Profile
+            {/* Edit Admin Profile */}
+            View Admin Profile
           </p>
           <RxCross1
             className="text-2xl font-semibold text-[#008080] cursor-pointer"
@@ -325,18 +326,21 @@ const UserProfile = () => {
               <label className=" w-full font-medium text-lg leading-5 text-[#008080]">
                 Province
               </label>
-              <select
+              <input
                 className="w-full h-12 p-2 border border-gray-400 rounded transition duration-200 ease-in-out focus:border-slate-100 mb-2"
                 {...register('province')}
                 onChange={(e) => {
                   setProvince(e.target.value);
                 }}
+
+                defaultValue={userProfile?.donor?.province}
+                disabled
               >
-                <option value="">Select a Province</option>
+                {/* <option value="">Select a Province</option>
                 {nepalJson.provinceList.map((oneProvince) => (
                   <option key={oneProvince.id}>{oneProvince.name}</option>
-                ))}
-              </select>
+                ))} */}
+              </input>
               {errors.province && (
                 <p
                   className=" m-0 w-full items-start text-sm text-red-600"
@@ -350,7 +354,7 @@ const UserProfile = () => {
               <label className=" w-full font-medium text-lg leading-5 text-[#008080]">
                 District
               </label>
-              <select
+              <input
                 className={`w-full h-12 p-2 border border-gray-400 ${
                   errors.district ? 'border-red-500' : 'border-slate-800'
                 } rounded transition duration-200 ease-in-out focus:border-slate-100 mb-2`}
@@ -358,8 +362,10 @@ const UserProfile = () => {
                 onChange={(e) => {
                   setDistrict(e.target.value);
                 }}
+                defaultValue={userProfile?.donor?.district}
+                disabled
               >
-                <option value="">Select a district</option>
+                {/* <option value="">Select a district</option>
                 {getDistrictsByProvinceName(province).map((oneDistrict) => (
                   <option
                     key={oneDistrict.id}
@@ -367,8 +373,8 @@ const UserProfile = () => {
                   >
                     {oneDistrict.name}
                   </option>
-                ))}
-              </select>
+                ))} */}
+              </input>
               {errors.district && (
                 <p
                   className=" m-0 w-full items-start text-sm text-red-600"
@@ -382,14 +388,17 @@ const UserProfile = () => {
               <label className=" w-full font-medium text-lg leading-5 text-[#008080]">
                 Municipality
               </label>
-              <select
+              <input
                 className={`w-full h-12 p-2 border border-gray-400 ${
                   errors.municipality ? 'border-red-500' : 'border-slate-800'
                 } rounded transition duration-200 ease-in-out focus:border-slate-100 mb-2`}
                 {...register('municipality')}
                 onChange={(e) => setMunicipality(e.target.value)}
+                defaultValue={userProfile?.donor?.municipality}
+                disabled
               >
-                <option value="">Select a district</option>
+
+                {/* <option value="">Select a district</option>
                 {getMunicipalitiesByDistrictName(district).map(
                   (oneMunicipality) => (
                     <option
@@ -399,8 +408,8 @@ const UserProfile = () => {
                       {oneMunicipality.name}
                     </option>
                   )
-                )}
-              </select>
+                )} */}
+              </input>
               {errors.municipality && (
                 <p
                   className=" m-0 w-full items-start text-sm text-red-600"
@@ -448,7 +457,7 @@ const UserProfile = () => {
                 Bloodgroup
               </label>
               <select
-                placeholder="Select your blood group"
+               value="Select your blood group"
                 className=" w-full border rounded-md h-12 p-2 transition duration-300 focus:outline-none focus:border-[#25CED1] focus:ring focus:ring-[#cbf1f5]"
                 {...register('bloodGroupId')}
                 defaultValue={userProfile?.donor?.bloodGroup.bloodGroupId}
