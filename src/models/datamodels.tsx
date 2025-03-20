@@ -37,9 +37,35 @@ export type PatientData = {
   municipality: string;
   wardNo: number;
   phoneNumber: number;
+  hospital:{
+    hospitalId: string;
+    hospitalName: string;
+    hospitalAddress: string;
+    municipality: string;
+    district: string;
+    wardNo: number;
+    province: string;
+
+  }
   hospitalId: string;
   remarks: string;
   bloodGroupId: string;
+  donor:{
+    donorName: string;
+    address: string;
+    userTypeId: string;
+    hospitalId?: string | undefined;
+    fatherName: string;
+    bloodGroupId: string;
+    lastDonated: Date | null;
+    district: string;
+    province: string;
+    municipality: string;
+    wardNo: number;
+    phoneNumber: number;
+    emergencyContact: number;
+    dateOfBirth: Date;
+  }
 };
 export type EditPatientwaitlist = {
   patientId: string;
@@ -119,10 +145,16 @@ export type AdminDataTable = {
   userType: UserType;
   hospitalName: string;
   actions?: React.ReactNode;
-  hospital: {
+  hospital:{
     hospitalId: string;
     hospitalName: string;
-  };
+    hospitalAddress: string;
+    municipality: string;
+    district: string;
+    wardNo: number;
+    province: string;
+
+  }
 };
 
 export type EditDonors = {
