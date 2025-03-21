@@ -268,7 +268,7 @@ const AddPatient: React.FC<CreatePatientProps> = (props) => {
                   )}
                 </div>
               </div>
-              <div className="w-full">
+              {/* <div className="w-full">
                 <label className="w-full font-medium text-lg leading-5 text-[#008080]">
                   Remarks
                 </label>
@@ -283,6 +283,29 @@ const AddPatient: React.FC<CreatePatientProps> = (props) => {
                     },
                   })}
                 ></textarea>
+                {errors.remarks && (
+                  <span className="text-red-500">{errors.remarks.message}</span>
+                )}
+              </div> */}
+
+              <div className="w-full">
+                <label className="w-full font-medium text-lg leading-5 text-[#008080]">
+                  Remarks
+                </label>
+                <select
+                  className="w-full h-12 border rounded-md p-2 transition duration-300 focus:outline-none focus:border-[#25CED1] focus:ring focus:ring-[#cbf1f5]"
+                  {...register("remarks", {
+                    required: "Please select a priority level", // Ensure a value is selected
+                  })}
+                >
+                  <option value="" disabled>
+                    Select Case
+                  </option>
+                  <option value="Accident">Accident </option>
+                  <option value="Surgery Complication">Surgery Complication </option>
+                  <option value="Pregnancy">Pregnancy </option>
+                  <option value="Planned Surgery">Planned Surgery </option>
+                </select>
                 {errors.remarks && (
                   <span className="text-red-500">{errors.remarks.message}</span>
                 )}

@@ -66,6 +66,7 @@ export type PatientData = {
     emergencyContact: number;
     dateOfBirth: Date;
   }
+  DateCreated: Date;
 };
 export type EditPatientwaitlist = {
   patientId: string;
