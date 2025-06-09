@@ -189,7 +189,7 @@ This project is developed as part of academic research for Bachelor's in Compute
 
 - [Frontend source code](https://github.com/samikshakhadka/BloodTransfusionManagementSystem-Client)
 - [Backend Source Code](https://github.com/samikshakhadka/BloodTransfusionManagementSystem-Server)
-- [Project Report]()
+- [Project Report](https://github.com/samikshakhadka/BloodTransfusionManagementSystem-Server/blob/main/Blood%20Donation%20Management%20System%20using%20weighted%20scoring%20Model%20(1).pdf)
 
 ---
 
